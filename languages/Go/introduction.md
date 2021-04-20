@@ -181,3 +181,30 @@ We can use *const* in Go to create constant values in the same way we use *var* 
 In Go constants are not written as in javascript by using everything in uppercase. It seems that variables that start with an uppercased letter has a specific meaning.
 
 TODO: review why we can name constants as all uppercase letters
+
+# Composite types
+## Arrays
+In Go, every element of an array should be of the same type. There's a couple ways to declare arrays.
+
+- Declare the type of the array and the length: `var x [3]int`
+- If we have the initial values we can define then directly `var x = [3]int{10,20,30}`
+- We can also create a new array with zero values and some index: `x := [5]int{2: 1}` this will print *[0 0 1 0 0]*
+- If we provide the literal array we can use `...` inside the length: `x := [...]string{"hello", "world"}`.
+
+In Go we can compare arrays unlike Javascript that the comparasion is by reference and not by value:
+
+```
+x := [...]int{1, 2, 3}
+y := [3]int{1, 2, 3}
+println(x == y) // is true
+```
+
+We can simulate a matrix like this:
+
+```
+x := [3][3]int
+```
+
+- We can use the `len` function to get the length of an array.
+
+> In Go the size of an array is part of it´s type. So a [3]int is a different type than [4]int.
