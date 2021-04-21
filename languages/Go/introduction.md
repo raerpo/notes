@@ -208,3 +208,24 @@ x := [3][3]int
 - We can use the `len` function to get the length of an array.
 
 > In Go the size of an array is part of it´s type. So a [3]int is a different type than [4]int.
+
+## Slices
+
+Since the arrays in GO should have a defined length, normally what we want to use are slices.
+
+Declaring a slice is very similar to declaring an array:
+
+```
+var x = []int{1,2,3,4}
+```
+
+That means that with `[...]` we create an array and with `[]` we create a slice.
+
+We can declare a slice without a literal value.
+
+```
+var x int[]
+```
+
+- The zero value of a slice is *nil*
+- We cannot compare slices like we did we arrays using == or =!
